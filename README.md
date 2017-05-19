@@ -62,8 +62,16 @@ ui <-
     dashboardHeader(),
     dashboardSidebar(
       sidebarMenu(
-        menuItem("First Tab", tabName = "first_tab", icon = icon("dashboard")),
-        menuItem("Second Tab", tabName = "second_tab", icon = icon("th"))
+        menuItem(
+          text = "First Tab",
+          tabName = "first_tab",
+          icon = icon("bar-chart")
+        ),
+        menuItem(
+          text = "Second Tab",
+          tabName = "second_tab",
+          icon = icon("database")
+        )
       )
     ),
     dashboardBody(
