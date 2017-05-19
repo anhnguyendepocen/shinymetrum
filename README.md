@@ -15,14 +15,13 @@ devtools::install_github("metrumresearchgroup/shinymetrum")
 library(shiny)
 library(shinymetrum)
 
-ui <-
-  navbarPage(
-    metrumStyle(), # apply metrum style
-    tags$p("app content")
-  )
-  
-server <- function(input, output) {
+ui <- navbarPage(
+  metrumStyle(), # apply metrum style
+  tags$p("app content")
+)
 
+server <- function(input, output) {
+  
 }
 
 shinyApp(ui, server)
@@ -32,18 +31,17 @@ shinyApp(ui, server)
 library(shiny)
 library(shinymetrum)
 
-ui <-
-  navbarPage(
-    metrumStyle(), # apply metrum style
-    tabPanel(
-      title = "First Tab",
-      tags$p("first tab content")
-    ),
-    tabPanel(
-      title = "Second Tab",
-      tags$p("second tab content")
-    )
+ui <- navbarPage(
+  metrumStyle(), # apply metrum style
+  tabPanel(
+    title = "First Tab",
+    tags$p("first tab content")
+  ),
+  tabPanel(
+    title = "Second Tab",
+    tags$p("second tab content")
   )
+)
 
 server <- function(input, output) {
   
@@ -58,37 +56,36 @@ library(shiny)
 library(shinydashboard)
 library(shinymetrum)
 
-ui <- 
-  dashboardPage(
-    dashboardHeader(),
-    dashboardSidebar(
-      sidebarMenu(
-        menuItem(
-          text = "First Tab",
-          tabName = "first_tab",
-          icon = icon("bar-chart")
-        ),
-        menuItem(
-          text = "Second Tab",
-          tabName = "second_tab",
-          icon = icon("database")
-        )
+ui <- dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem(
+        text = "First Tab",
+        tabName = "first_tab",
+        icon = icon("bar-chart")
+      ),
+      menuItem(
+        text = "Second Tab",
+        tabName = "second_tab",
+        icon = icon("database")
       )
-    ),
-    dashboardBody(
-      metrumStyle(), # apply metrum style
-      tabItems(
-        tabItem(
-          tabName = "first_tab",
-          tags$p("first tab content")
-        ),
-        tabItem(
-          tabName = "second_tab",
-          tags$p("second tab content")
-        )
+    )
+  ),
+  dashboardBody(
+    metrumStyle(), # apply metrum style
+    tabItems(
+      tabItem(
+        tabName = "first_tab",
+        tags$p("first tab content")
+      ),
+      tabItem(
+        tabName = "second_tab",
+        tags$p("second tab content")
       )
     )
   )
+)
 
 server <- function(input, output) {
   
