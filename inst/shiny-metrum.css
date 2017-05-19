@@ -140,7 +140,7 @@ h6:after {
 .left-side,
 .main-sidebar,
 .wrapper {
-    background-color: var(--background-grey) !important;
+    background-color: /var(--background-grey) !important;
 }
 
 
