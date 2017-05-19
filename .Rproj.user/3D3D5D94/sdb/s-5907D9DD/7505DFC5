@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "metrum_app <- function(..., tab_title = \"Metrum - Shiny App\", logo_link = \"http://dev-metrum.pantheonsite.io/wp-content/themes/metrum/favicon.ico\"){\n  shiny::tags$html(\n    # Head --------------------------------------------------------------------\n    shiny::tags$head(\n      # Metrum CSS\n      shiny::tags$meta(\n        charset = \"UTF-8\"\n      ),\n      shiny::tags$meta(\n        name = \"viewport\",\n        content = \"width=device-width, initial-scale=1, maximum-scale=1\"\n      ),\n      shiny::tags$link(\n        rel = \"shortcut icon\",\n        href = logo_link\n      ),\n      shiny::tags$title(\n        tab_title\n      ),\n      shiny::bootstrapLib(),\n      shiny::includeCSS(\n        system.file(\n          \"css/shiny-metrum.css\",\n          package = \"shinymetrum\"\n        )\n      )\n    ),\n    # Body --------------------------------------------------------------------\n    shiny::tags$body(\n      shiny::tags$nav(\n        class = \"navbar navbar-fixed-top shiny-metrum-nav-bar\",\n        shiny::tags$div(\n          class = \"container-fluid\",\n          shiny::tags$div(\n            class = \"navbar-header\",\n            shiny::tags$a(\n              class = \"navbar-brand\",\n              href = \"http://dev-metrum.pantheonsite.io/\",\n              target = \"_blank\",\n              shiny::tags$img(\n                id = \"shiny-metrum-logo\",\n                src = \"http://dev-metrum.pantheonsite.io/wp-content/themes/metrum/public/img/logo.png\",\n                alt = \"Metrum Research Group\"\n              )\n            )\n          )\n        )\n      ),\n      shiny::tags$div(\n        id = \"shiny-metrum-wrapper\",\n        shiny::tags$div(\n          id = \"shiny-metrum-sidebar-wrapper\",\n          shiny::tags$h3(\"sidebar content\")\n        ),\n        shiny::tags$div(\n          id = \"shiny-metrum-app-content-wrapper\",\n          shiny::tags$div(\n            class = \"shiny-metrum-app-content\",\n            ...\n          )\n        )\n      )\n    )\n  )\n}\n",
+    "created" : 1494618023768.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3594871252",
+    "id" : "7505DFC5",
+    "lastKnownWriteTime" : 1494618279,
+    "last_content_update" : 1494618279329,
+    "path" : "~/Documents/svn-shinymrg/shinymetrum/R/shiny-metrum-app.R",
+    "project_path" : "R/shiny-metrum-app.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,211 @@
+:root {
+    --forest-green: #08642e;
+    --ocean-blue: #16b1bf;
+    --background-grey: #f1f1f1;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif !important;
+    line-height: 1 !important;
+    color: #727272 !important;
+    background-color: var(--background-grey);
+}
+
+
+/*logo and main-header are from shinydashboard*/
+
+.logo,
+.navbar {
+    background-color: var(--ocean-blue) !important;
+    border-color: var(--ocean-blue) !important;
+    text-transform: uppercase !important;
+}
+
+.navbar-nav>li>a {
+    color: #d2d2d2 !important;
+}
+
+
+/***** headers and labels *****/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.9;
+    margin-top: 10px;
+    margin-bottom: 23px
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+h1:after,
+h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+    width: 146px;
+    height: 3px;
+    background: var(--ocean-blue);
+    display: block;
+    content: "";
+    margin-top: 8px
+}
+
+.shiny-options-group label:after {
+    background: transparent;
+}
+
+
+/* button */
+
+.btn {
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1;
+    border: 0;
+    font-weight: 500;
+    padding: 13px 15px;
+    border: 1px solid #fff;
+    -webkit-box-shadow: 3px 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, .3);
+    color: #fff;
+    background-color: var(--ocean-blue);
+    border-color: #139ca8;
+    border: 1px solid #fff;
+}
+
+.btn:focus {
+    color: #fff;
+    background-color: #118791;
+    border-color: #063236
+}
+
+.btn:active,
+.btn:hover {
+    color: #fff;
+    background-color: #118791 !important;
+    border-color: #0d6971
+}
+
+.btn:active:focus,
+.btn:active:hover {
+    /*color: #fff;*/
+    background-color: #0d6971;
+    border-color: #063236
+}
+
+
+/* slider */
+
+.irs-bar {
+    border-top-color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+}
+
+.irs-bar-edge {
+    border-color: #FFFFFF;
+}
+
+.irs-single,
+.irs-bar-edge,
+.irs-bar {
+    background: var(--ocean-blue);
+}
+
+
+/***** adjustments for shinydashboard *****/
+
+.sidebar-toggle {
+    color: var(--background-grey) !important;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--ocean-blue) !important;
+    color: #FFFFFF !important
+}
+
+
+/* this is essentially 'body' for shinydashboard */
+
+.content-wrapper {
+    background-color: var(--background-grey) !important;
+}
+
+.left-side,
+.main-sidebar,
+.wrapper {
+    background-color: var(--background-grey) !important;
+}
+
+
+/* selected items in nav (shinydashboard and regular) */
+
+.navbar-nav>.active>a,
+.navbar-nav>li>a:focus,
+.navbar-nav>li>a:hover {
+    color: #FFFFFF !important;
+    background-color: var(--ocean-blue) !important;
+}
+
+.sidebar-menu>li.active>a,
+.sidebar-menu>li:hover>a {
+    color: rgba(9, 101, 46, 1) !important;
+    background: #e4e4e4 !important;
+    border-left-color: var(--forest-green) !important;
+}
+
+.sidebar a {
+    font-weight: bold !important;
+    color: #909090 !important;
+    text-transform: uppercase;
+    border-left: 8px solid transparent !important;
+}
+
+.sidebar {
+    color: #606060 !important;
+    font-weight: normal !important;
+}
+
+.sidebar-menu>li>a {}
+
+.well,
+.box {
+    background: #FFFFFF;
+    border-top: 0 !important;
+    -webkit-box-shadow: 0 10px 16px 0 rgba(0, 0, 0, .3) !important;
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, .3) !important;
+}
+
+.sidebar-menu>li>.treeview-menu {
+    background: #e4e4e4 !important;
+}
+
+.table>thead>tr>th {
+    border-bottom: 2px solid #606060;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    border-top: 1px solid #606060;
+}
+
+
+/* checkbox */
+
+.checkbox label:after {
+    background: transparent;
+}
+
+a {
+    color: var(--forest-green) !important;
+}

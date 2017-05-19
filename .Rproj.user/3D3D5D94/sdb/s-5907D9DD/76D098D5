@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(ggplot2)\nlibrary(dplyr)\nlibrary(shiny)\nlibrary(shinymetrum)\n\nui <-\n  metrum_app(\n    fluidRow(\n      column(\n        width = 1,\n        metrum_button(\n          input_id = \"randomize\",\n          label = \"randomize\"\n        )\n      ),\n      column(\n        width = 10,\n        metrum_card(\n          title = \"Metrum Research Plots\",\n          plotOutput('plot_out'),\n          plotOutput('plot_out2'),\n          plotOutput('plot_out3')\n        )\n      )\n    )\n  )\n\nserver <- function(input, output){\n\n  plot_data <- reactive({\n    input$randomize\n    mtcars[sample(1:nrow(mtcars), 20), ]\n  })\n\n  output$plot_out <- renderPlot({\n    plot_data() %>%\n      group_by(\n        cyl\n      ) %>%\n      summarise(\n        mean_mpg = mean(mpg)\n      ) %>%\n    ggplot(\n      aes(\n        x = cyl,\n        y = mean_mpg,\n        fill = as.factor(cyl)\n      )\n    ) +\n      geom_bar(\n        stat = \"identity\",\n        alpha = .75\n      )\n  })\n\n  output$plot_out2 <- renderPlot({\n    ggplot(\n      plot_data(),\n      aes(\n        x = mpg\n      )\n    ) +\n      geom_density(\n        alpha = .5,\n        fill = 'green'\n      )\n  })\n  output$plot_out3 <- renderPlot({\n    ggplot(\n      plot_data(),\n      aes(\n        x = wt,\n        y = mpg\n      )\n    ) +\n      geom_point(\n        alpha = 1\n      ) +\n      geom_smooth(\n        method = \"lm\",\n        se = FALSE,\n        color = 'red'\n      )\n  })\n}\n\nshinyApp(ui = ui, server = server)\n",
+    "created" : 1494617810606.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2398973385",
+    "id" : "76D098D5",
+    "lastKnownWriteTime" : 1494602700,
+    "last_content_update" : 1494618882593,
+    "path" : "~/Documents/svn-shinymrg/shinymetrum/tests/app.R",
+    "project_path" : "tests/app.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
