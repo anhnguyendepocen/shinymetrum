@@ -17,7 +17,7 @@ $(document).ready(function () {
         });
 
         var brandImage = $("<img>", {
-            src: "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/logo.png",
+            src: "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo.png",
             height: "30px",
             width: "128.75px",
             alt: "Metrum Research Group"
