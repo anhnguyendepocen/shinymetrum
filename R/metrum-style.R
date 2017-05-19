@@ -9,13 +9,13 @@ metrumStyle <- function(tab_title = "Metrum - Shiny App"){
     ),
     shiny::includeCSS(
       system.file(
-        "shinymetrum.css",
+        "shiny-metrum.css",
         package = "shinymetrum"
       )
     ),
     shiny::includeScript(
       system.file(
-        "shinymetrum.js",
+        "shiny-metrum.js",
         package = "shinymetrum"
       )
     )
