@@ -17,7 +17,7 @@ $(document).ready(function () {
         });
 
         var brandImage = $("<img>", {
-            src: "https://dev-metrum.pantheonsite.io/wp-content/themes/metrum/public/img/logo.png",
+            src: "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/logo.png",
             height: "30px",
             width: "128.75px",
             alt: "Metrum Research Group"
