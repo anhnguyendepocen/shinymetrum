@@ -2,15 +2,15 @@ shinymetrum
 ===============
 Apply Metrum style to shiny apps.
 
-## Installation
+# Installation
 
 ```R
 devtools::install_github("metrumresearchgroup/shinymetrum")
 ```
 
-## Starter Templates
+# Starter Templates
 
-### shiny
+#### shiny
 ```R
 library(shiny)
 library(shinymetrum)
@@ -26,7 +26,7 @@ server <- function(input, output) {
 
 shinyApp(ui, server)
 ```
-### shiny with tabs
+#### shiny with tabs
 ```R
 library(shiny)
 library(shinymetrum)
@@ -50,7 +50,7 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-### shinydashboard with tabs
+#### shinydashboard with tabs
 ```R
 library(shiny)
 library(shinydashboard)
