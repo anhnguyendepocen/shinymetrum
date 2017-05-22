@@ -1,15 +1,15 @@
-shinymetrum
-===============
+#shinymetrum
+
 Apply Metrum style to shiny apps.
 
-
-
+<br>
 ## Installation
 
 ```R
 devtools::install_github("metrumresearchgroup/shinymetrum")
 ```
 
+<br>
 ## Starter Templates
 
 #### shiny
