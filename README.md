@@ -15,22 +15,6 @@ library(shinymetrum)
 
 ui <- navbarPage(
   metrumStyle(), # apply metrum style
-  tags$p("app content")
-)
-
-server <- function(input, output) {
-  
-}
-
-shinyApp(ui, server)
-```
-#### shiny with tabs
-```R
-library(shiny)
-library(shinymetrum)
-
-ui <- navbarPage(
-  metrumStyle(), # apply metrum style
   tabPanel(
     title = "First Tab",
     tags$p("first tab content")
@@ -48,7 +32,7 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-#### shinydashboard with tabs
+#### shinydashboard
 ```R
 library(shiny)
 library(shinydashboard)

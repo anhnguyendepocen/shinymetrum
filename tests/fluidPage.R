@@ -2,8 +2,7 @@ library(datasets)
 library(shiny)
 library(shinymetrum)
 
-ui <-
-  navbarPage(
+ui <- fluidPage(
     metrumStyle(),
     tags$h2("Telephones by region"),
     fluidRow(

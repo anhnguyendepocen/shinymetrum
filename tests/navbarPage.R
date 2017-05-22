@@ -1,18 +1,38 @@
-library(ggplot2)
-library(dplyr)
+library(datasets)
 library(shiny)
 library(shinymetrum)
 
-ui <-
+ui <- 
   navbarPage(
-    # title = "Default",
     metrumStyle(),
     tabPanel(
-      "inputs",
+      title = "Example",
+      tags$h2("Telephones by region"),
+      fluidRow(
+        column(
+          width = 4,
+          wellPanel(
+            selectInput(
+              "region",
+              "Region:",
+              choices = colnames(WorldPhones)
+            ),
+            helpText("Data from AT&T (1961) The World's Telephones.")
+          )
+        ),
+        column(
+          width = 7,
+          plotOutput("phonePlot")
+        )
+      )
+    ),
+    tabPanel(
+      title = "Inputs",
       fluidRow(
         column(
           width = 3,
           offset = 1,
+          br(),
           sliderInput(
             inputId = "slider_id",
             label = "Slider Input Example",
@@ -20,11 +40,15 @@ ui <-
             min = 5,
             max = 15
           ),
+          br(),
+          br(),
           numericInput(
             inputId = "numeric_id",
             label = "Sample Size",
             value = 10
           ),
+          br(),
+          br(),
           actionButton(
             inputId = "button_id",
             label = "Button"
@@ -32,14 +56,19 @@ ui <-
         ),
         column(
           width = 3,
+          br(),
           checkboxInput(
             inputId = "checkbox_id",
             label = "Checkbox example"
           ),
+          br(),
+          br(),
           textInput(
             inputId = "text_id",
             label = "Example"
           ),
+          br(),
+          br(),
           radioButtons(
             inputId = "radiobuttons_id",
             label = "RadioButtons",
@@ -48,11 +77,14 @@ ui <-
         ),
         column(
           width = 3,
+          br(),
           checkboxGroupInput(
             inputId = "checkboxgroup_id",
             label = "Checkbox group example",
             choices = c("Check A", "Check B", "Check C")
           ),
+          br(),
+          br(),
           selectInput(
             inputId = "selectInput_id",
             label = "Example Select",
@@ -60,36 +92,30 @@ ui <-
           )
         )
       )
-    ),
-    tabPanel(
-      "Card",
-      fluidRow(
-        column(
-          width = 10,
-          offset = 1,
-          wellPanel(
-            tags$h3("Metrum Research Plots"),
-            plotOutput('plot_out'),
-            plotOutput('plot_out2'),
-            plotOutput('plot_out3')
-          )
-        )
-      )
     )
   )
 
-
-server <- function(input, output){
-  plot_data <- reactive({
-    input$randomize
-    mtcars[sample(1:nrow(mtcars), input$numeric_id), ]
+server <- function(input, output) {
+  
+  # Example tab
+  output$phonePlot <- renderPlot({
+    barplot(
+      WorldPhones[,input$region]*1000, 
+      main=input$region,
+      ylab="Number of Telephones",
+      xlab="Year"
+    )
   })
   
+  # Inputs tab
   observeEvent(input$slider_id, {
     message(input$slider_id)
   })
   observeEvent(input$numeric_id, {
     message(input$numeric_id)
+  })
+  observeEvent(input$button_id, {
+    message(input$button_id)
   })
   observeEvent(input$randomize,{
     message(input$randomize)
@@ -109,59 +135,5 @@ server <- function(input, output){
   observeEvent(input$selectInput_id, {
     message(input$selectInput_id)
   })
-  
-  
-  
-  output$plot_out <- renderPlot({
-    plot_data() %>%
-      group_by(
-        cyl
-      ) %>%
-      summarise(
-        mean_mpg = mean(mpg)
-      ) %>%
-      ggplot(
-        aes(
-          x = cyl,
-          y = mean_mpg,
-          fill = as.factor(cyl)
-        )
-      ) +
-      geom_bar(
-        stat = "identity",
-        alpha = .75
-      )
-  })
-  
-  output$plot_out2 <- renderPlot({
-    ggplot(
-      plot_data(),
-      aes(
-        x = mpg
-      )
-    ) +
-      geom_density(
-        alpha = .5,
-        fill = 'green'
-      )
-  })
-  output$plot_out3 <- renderPlot({
-    ggplot(
-      plot_data(),
-      aes(
-        x = wt,
-        y = mpg
-      )
-    ) +
-      geom_point(
-        alpha = 1
-      ) +
-      geom_smooth(
-        method = "lm",
-        se = FALSE,
-        color = 'red'
-      )
-  })
 }
-
 shinyApp(ui = ui, server = server)
