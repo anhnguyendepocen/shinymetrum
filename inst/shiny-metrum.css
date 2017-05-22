@@ -198,6 +198,26 @@ h6:after {
     border-top: 1px solid #606060;
 }
 
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: var(--forest-green) !important;
+    background-color: var(--background-grey);
+    border-bottom-color: var(--forest-green);
+    border-bottom-width: 5px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+    text-transform: uppercase;
+}
+
+.nav>li>a {
+    font-weight: bold !important;
+    color: #909090 !important;
+    text-transform: uppercase !important;
+    /*border-left: 8px solid transparent !important;*/
+}
+
 
 /* checkbox */
 

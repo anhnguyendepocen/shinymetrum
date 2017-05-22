@@ -4,7 +4,7 @@ library(shinymetrum)
 
 ui <- 
   navbarPage(
-    # title = "default style",
+    #title = "default style",
     metrumStyle(),
     tabPanel(
       title = "Example",
