@@ -1,5 +1,7 @@
 library(ggplot2)
+library(dplyr)
 library(shiny)
+library(DT)
 library(shinymetrum)
 library(shinydashboard)
 
@@ -17,6 +19,16 @@ ui <-
           "Widgets",
           tabName = "widgets",
           icon = icon("suitcase")
+        ),
+        menuItem(
+          "Data",
+          tabName = "data",
+          icon = icon("database")
+        ),
+        menuItem(
+          "Misc. Info",
+          tabName = "misc_info",
+          icon = icon("info-circle")
         )
       )
     ),
@@ -58,23 +70,51 @@ ui <-
             column(
               width = 8,
               offset = 1,
-              radioButtons(
-                inputId = "y_variable",
-                label = "Y Variable",
-                choices = c(
-                  "Miles per Gallon" = "mpg",
-                  "House Power" = "hp"
+              box(
+                width = NULL,
+                radioButtons(
+                  inputId = "y_variable",
+                  label = "Y Variable",
+                  choices = c(
+                    "Miles per Gallon" = "mpg",
+                    "House Power" = "hp"
+                  ),
+                  inline = TRUE
                 ),
-                inline = TRUE
-              ),
-              plotOutput("mtcarsBoxPlot")
+                plotOutput("mtcarsBoxPlot")
+              )
+            )
+          )
+        ),
+        tabItem(
+          tabName = "data",
+          fluidRow(
+            column(
+              width = 10,
+              box(
+                width = NULL,
+                dataTableOutput("mtcarsData")
+              )
+            )
+          )
+        ),
+        tabItem(
+          tabName = "misc_info",
+          fluidRow(
+            column(
+              width = 3,
+              offset = 1,
+              box(
+                width = NULL,
+                h4("Current Time"),
+                p(Sys.time())
+              )
             )
           )
         )
       )
     )
   )
-
 server <- function(input, output) {
   
   plotData <- reactive({
@@ -116,6 +156,15 @@ server <- function(input, output) {
       ) +
       theme(
         legend.position = 'None'
+      )
+  })
+  
+  output$mtcarsData <- renderDataTable({
+    mtcars %>% 
+      tibble::rownames_to_column('model') %>% 
+      datatable(
+        rownames = FALSE,
+        class = "display cell-border"
       )
   })
 }

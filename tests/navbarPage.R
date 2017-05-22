@@ -8,7 +8,9 @@ ui <-
     metrumStyle(),
     tabPanel(
       title = "Example",
-      tags$h2("Telephones by region"),
+      tags$h2(
+        "Telephones by region"
+      ),
       fluidRow(
         column(
           width = 4,
@@ -18,7 +20,9 @@ ui <-
               "Region:",
               choices = colnames(WorldPhones)
             ),
-            helpText("Data from AT&T (1961) The World's Telephones.")
+            helpText(
+              "Data from AT&T (1961) The World's Telephones."
+            )
           )
         ),
         column(
@@ -89,7 +93,11 @@ ui <-
           selectInput(
             inputId = "selectInput_id",
             label = "Select Input",
-            choices = c("Select A", "Select B", "Select C")
+            choices = c(
+              "Select A",
+              "Select B",
+              "Select C"
+            )
           )
         )
       )
@@ -101,7 +109,7 @@ server <- function(input, output) {
   # Example tab
   output$phonePlot <- renderPlot({
     barplot(
-      WorldPhones[,input$region]*1000, 
+      WorldPhones[,input$region] * 1000, 
       main=input$region,
       ylab="Number of Telephones",
       xlab="Year"
