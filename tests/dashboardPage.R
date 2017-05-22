@@ -164,7 +164,11 @@ server <- function(input, output) {
       tibble::rownames_to_column('model') %>% 
       datatable(
         rownames = FALSE,
-        class = "display cell-border"
+        class = "display cell-border",
+        options = 
+          list(
+            pageLength = 15
+          )
       )
   })
 }
