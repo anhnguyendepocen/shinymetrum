@@ -95,7 +95,6 @@ h6:after {
 
 .btn:active:focus,
 .btn:active:hover {
-    /*color: #fff;*/
     background-color: #0d6971;
     border-color: #063236
 }
