@@ -145,4 +145,5 @@ server <- function(input, output) {
     message(input$selectInput_id)
   })
 }
+
 shinyApp(ui = ui, server = server)
