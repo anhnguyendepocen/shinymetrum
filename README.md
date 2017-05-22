@@ -1,5 +1,5 @@
-#shinymetrum
-
+shinymetrum
+===============
 Apply Metrum style to shiny apps.
 
 <br>
@@ -8,7 +8,6 @@ Apply Metrum style to shiny apps.
 ```R
 devtools::install_github("metrumresearchgroup/shinymetrum")
 ```
-
 <br>
 ## Starter Templates
 
