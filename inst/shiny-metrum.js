@@ -12,7 +12,7 @@ $(document).ready(function () {
         $(brandClass).empty();
 
         var brandLink = $("<a>", {
-            href: "http://dev-metrum.pantheonsite.io/",
+            href: "http://metrumrg.com/",
             target: "_blank"
         });
 

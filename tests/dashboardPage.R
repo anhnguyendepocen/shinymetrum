@@ -1,3 +1,4 @@
+library(ggplot2)
 library(shiny)
 library(shinymetrum)
 library(shinydashboard)
@@ -20,7 +21,7 @@ ui <-
       )
     ),
     dashboardBody(
-       metrumStyle(),
+      metrumStyle(),
       tabItems(
         tabItem(
           tabName = "dashboard", 
@@ -29,24 +30,24 @@ ui <-
               width = 4,
               box(
                 solidHeader = TRUE, 
-                collapsible = TRUE,
                 width = NULL,
                 title = "Controls",
+                br(),
                 sliderInput(
                   inputId = "slider",
                   label = "Number of observations:", 
-                  min = 1,
-                  max = 100,
+                  min = 10,
+                  max = 1000,
                   value = 50
                 )
               )
             ),
             column(
-              width = 6,
+              width = 7,
               box(
-                title = "Plots",
+                title = "Random Normal",
                 width = NULL,
-                plotOutput("plot1")
+                plotOutput("rnormPlot")
               )
             )
           )
@@ -55,9 +56,18 @@ ui <-
           tabName = "widgets",    
           fluidRow(
             column(
-              width = 6,
-              offset = 2,
-              tags$p("widgets tab content")
+              width = 8,
+              offset = 1,
+              radioButtons(
+                inputId = "y_variable",
+                label = "Y Variable",
+                choices = c(
+                  "Miles per Gallon" = "mpg",
+                  "House Power" = "hp"
+                ),
+                inline = TRUE
+              ),
+              plotOutput("mtcarsBoxPlot")
             )
           )
         )
@@ -66,12 +76,47 @@ ui <-
   )
 
 server <- function(input, output) {
-  set.seed(122)
-  histdata <- rnorm(500)
   
-  output$plot1 <- renderPlot({
-    data <- histdata[seq_len(input$slider)]
-    hist(data)
+  plotData <- reactive({
+    data.frame(x = rnorm(input$slider))
+  })
+  
+  output$rnormPlot <- renderPlot({
+    ggplot(
+      plotData(),
+      aes(
+        x = x
+      )
+    )+
+      geom_density(
+        fill = 'green',
+        alpha = .7
+      )
+  })
+  
+  output$mtcarsBoxPlot <- renderPlot({
+    ggplot(
+      mtcars,
+      aes_string(
+        x = "as.factor(cyl)",
+        y = input$y_variable,
+        group = "as.factor(cyl)",
+        fill = "as.factor(cyl)"
+      )
+    ) +
+      geom_boxplot(
+        alpha = .8
+      ) +
+      xlab('Cylinder') +
+      ylab(
+        ifelse(
+          input$y_variable == "mpg", 
+          "Miles per Gallon", "Horse Power"
+        )
+      ) +
+      theme(
+        legend.position = 'None'
+      )
   })
 }
 

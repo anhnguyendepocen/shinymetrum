@@ -4,6 +4,7 @@ library(shinymetrum)
 
 ui <- 
   navbarPage(
+    # title = "default style",
     metrumStyle(),
     tabPanel(
       title = "Example",
@@ -35,7 +36,7 @@ ui <-
           br(),
           sliderInput(
             inputId = "slider_id",
-            label = "Slider Input Example",
+            label = "Slider Input",
             value = 10,
             min = 5,
             max = 15
@@ -44,7 +45,7 @@ ui <-
           br(),
           numericInput(
             inputId = "numeric_id",
-            label = "Sample Size",
+            label = "Numeric Input",
             value = 10
           ),
           br(),
@@ -59,19 +60,19 @@ ui <-
           br(),
           checkboxInput(
             inputId = "checkbox_id",
-            label = "Checkbox example"
+            label = "Checkbox"
           ),
           br(),
           br(),
           textInput(
             inputId = "text_id",
-            label = "Example"
+            label = "Text Input"
           ),
           br(),
           br(),
           radioButtons(
             inputId = "radiobuttons_id",
-            label = "RadioButtons",
+            label = "Radio Buttons",
             choices = c("A", "B", "C")
           )
         ),
@@ -80,14 +81,14 @@ ui <-
           br(),
           checkboxGroupInput(
             inputId = "checkboxgroup_id",
-            label = "Checkbox group example",
+            label = "Checkbox Group",
             choices = c("Check A", "Check B", "Check C")
           ),
           br(),
           br(),
           selectInput(
             inputId = "selectInput_id",
-            label = "Example Select",
+            label = "Select Input",
             choices = c("Select A", "Select B", "Select C")
           )
         )
