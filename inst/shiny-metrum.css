@@ -225,6 +225,10 @@ h6:after {
     background: transparent;
 }
 
-a {
+a:not(.btn) {
     color: var(--forest-green) !important;
+}
+
+a.sidebar-toggle {
+    color: #FFFFFF !important;
 }
