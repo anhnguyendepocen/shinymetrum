@@ -31,7 +31,7 @@ dashboardPage(
         fluidRow(
           box(
             width = 12,
-            h4('Input Selection'),
+            h4('Select Car Models'),
             selectInput(
               inputId = "carModels",
               label = "Car Models Included",
@@ -41,10 +41,11 @@ dashboardPage(
             )
           )
         ),
+        br(),
         fluidRow(
           box(
             width = 12,
-            h4('Selected Data'),
+            h4('Selected Car Models Data'),
             dataTableOutput('selectedData')
           )
         )
@@ -56,7 +57,7 @@ dashboardPage(
         fluidRow(
           box(
             width = 12,
-            h4('MPG Density'),
+            h4('Selected Car Models MPG Density'),
             plotOutput('selectedDataPlot')
           )
         )
