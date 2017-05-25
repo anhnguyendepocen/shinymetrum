@@ -226,6 +226,12 @@ h6:after {
     background: transparent;
 }
 
+.checkbox-inline+.checkbox-inline,
+.radio-inline+.radio-inline {
+    margin-top: 10px !important;
+    margin-left: 10px !important;
+}
+
 a:not(.btn) {
     color: var(--forest-green) !important;
 }
