@@ -6,7 +6,7 @@ library(shinymetrum)
 library(shinydashboard)
 #dev
 ui <-
-  dashboardPage(
+  dashboardPage(title = 'title',
     dashboardHeader(),
     dashboardSidebar(
       sidebarMenu(

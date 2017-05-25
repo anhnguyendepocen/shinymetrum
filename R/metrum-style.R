@@ -1,11 +1,8 @@
-metrumStyle <- function(tab_title = "Metrum - Shiny App"){
+metrumStyle <- function(){
   shiny::tags$head(
     shiny::tags$link(
       rel = "shortcut icon",
       href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
-    ),
-    shiny::tags$title(
-      tab_title
     ),
     shiny::includeCSS(
       system.file(
@@ -15,7 +12,7 @@ metrumStyle <- function(tab_title = "Metrum - Shiny App"){
     ),
     shiny::includeScript(
       system.file(
-        "shiny-metrum.js",
+        "replace-logo.js",
         package = "shinymetrum"
       )
     )
