@@ -31,7 +31,7 @@ metworxApp <- function(..., tab_title = "Metworx Shiny App", page_title = "Metwo
         shiny::tags$nav(
           class = "navbar navbar-custom",
           shiny::tags$a(
-            href = "https://launchpad-v2-1.metworx.com",
+            href = "http://metrumrg.com/",
             target = "_blank",
             shiny::tags$img(
               src = "https://github.com/metrumresearchgroup/shinymetrum/blob/master/inst/img/metworxLogo.png?raw=true",
