@@ -1,2 +1,3 @@
 exportPattern("metrumStyle")
 exportPattern("metrumApp")
+exportPattern("metworxApp")
