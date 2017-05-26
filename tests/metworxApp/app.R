@@ -4,7 +4,9 @@ server <- function(input, output) {
 
 ui <- 
   metworxApp(
-    tags$h1("app stuff")
+    wellPanel(
+      tags$p("app stuff")
+    )
   )
 
 shiny::shinyApp(ui = ui, server = server)
