@@ -47,7 +47,7 @@ metworxApp <- function(..., metworx_title = "Metworx Shiny App"){
       class = "jumbotron jumbo-head",
       shiny::tags$div(
         class = "container-fluid",
-        shiny::tags$h1(page_title)
+        shiny::tags$h1(metworx_title)
       )
     ),
     ...
