@@ -5,7 +5,7 @@ server <- function(input, output) {
 ui <- 
   metworxApp(
     wellPanel(
-      tags$p("app stuff")
+      tags$p("app content")
     )
   )
 
