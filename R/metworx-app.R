@@ -1,13 +1,13 @@
-metworxApp <- function(..., tab_title = "Metworx Shiny App", page_title = "Metworx Shiny App"){
+metworxApp <- function(..., metworx_title = "Metworx Shiny App"){
   shiny::tagList(
     shiny::tags$head(
       shiny::tags$meta(
         content="width=device-width, initial-scale=1.0",
         name="viewport"
       ),
-      shiny::tags$title(
-        tab_title
-      ),
+      # shiny::tags$title(
+      #   tab_title
+      # ),
       shiny::tags$link(
         rel="stylesheet",
         media="screen",
