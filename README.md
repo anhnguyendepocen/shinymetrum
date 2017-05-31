@@ -1,6 +1,6 @@
 shinymetrum
 ===============
-Apply Metrum style to shiny apps.
+Use Metrum style in shiny apps.
 
 ## Installation
 ```R
