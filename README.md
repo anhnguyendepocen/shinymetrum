@@ -7,9 +7,7 @@ Apply Metrum style to shiny apps.
 devtools::install_github("metrumresearchgroup/shinymetrum")
 ```
 
-## Starter Templates
-
-### Metworx Theme App
+## Metworx Theme App
 ```R
 library(shiny)
 library(shinymetrum)
@@ -36,7 +34,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-### Metrum Theme App
+## Metrum Theme App
 #### shiny
 ```R
 library(shiny)
