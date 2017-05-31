@@ -40,7 +40,7 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-![](https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/github/screenshots/metworxApp.png)
+![](https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/github/screenshots/metworxApp1.png)
 
 ## Metrum Style Shiny App
 #### shiny
