@@ -8,10 +8,10 @@ ui <- metworxApp(
   fluidPage(    
     sidebarLayout(      
       sidebarPanel(
-        tags$p("side bar content")
+        sliderInput('nDraws', '# of Draws', 5, 100, 50)
       ),
       mainPanel(
-        tags$p("main panel content")
+        plotOutput('randNorm')
       )
     )
   )
@@ -20,7 +20,9 @@ ui <- metworxApp(
 )
 
 server <- function(input, output) {
-  
+  output$randNorm <- renderPlot({
+    plot(density(rnorm(input$nDraws)))
+  })
 }
 
 shinyApp(ui = ui, server = server)
