@@ -1,12 +1,23 @@
+library(shiny)
+library(shinymetrum)
 
-server <- function(input, output) {
-}
-
-ui <- 
-  metworxApp(
-    wellPanel(
-      tags$p("app content")
+ui <- metworxApp(
+  metworxTitle = "Sample App",
+  fluidPage(    
+    title = "tab title",
+    sidebarLayout(      
+      sidebarPanel(
+        tags$p("side bar content")
+      ),
+      mainPanel(
+        tags$p("main panel content")
+      )
     )
   )
+)
 
-shiny::shinyApp(ui = ui, server = server)
+server <- function(input, output) {
+  
+}
+
+shinyApp(ui = ui, server = server)

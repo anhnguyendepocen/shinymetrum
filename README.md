@@ -8,6 +8,35 @@ devtools::install_github("metrumresearchgroup/shinymetrum")
 ```
 
 ## Starter Templates
+
+### Metworx Theme App
+```R
+library(shiny)
+library(shinymetrum)
+
+ui <- metworxApp(
+  metworxTitle = "Sample App",
+  fluidPage(    
+    title = "tab title",
+    sidebarLayout(      
+      sidebarPanel(
+        tags$p("side bar content")
+      ),
+      mainPanel(
+        tags$p("main panel content")
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+### Metrum Theme App
 #### shiny
 ```R
 library(shiny)
