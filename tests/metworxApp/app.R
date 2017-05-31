@@ -3,8 +3,8 @@ library(shinymetrum)
 
 ui <- metworxApp(
   metworxTitle = "Sample App",
+  
   fluidPage(    
-    title = "tab title",
     sidebarLayout(      
       sidebarPanel(
         tags$p("side bar content")
@@ -14,6 +14,7 @@ ui <- metworxApp(
       )
     )
   )
+  
 )
 
 server <- function(input, output) {
