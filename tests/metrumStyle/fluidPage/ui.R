@@ -1,20 +1,22 @@
-ui <- shiny::fluidPage(
-  # metrumStyle(),
-  shiny::tags$h2("Telephones by region"),
-  shiny::fluidRow(
-    shiny::column(
-      width = 4,
-      shiny::wellPanel(
-        shiny::selectInput(
-          "region", "Region:", 
-          choices=colnames(datasets::WorldPhones)
-        ),
-        shiny::helpText("Data from AT&T (1961) The World's Telephones.")
+shiny::shinyUI(
+  shiny::fluidPage(
+    # metrumStyle(),
+    shiny::tags$h2("Telephones by region"),
+    shiny::fluidRow(
+      shiny::column(
+        width = 4,
+        shiny::wellPanel(
+          shiny::selectInput(
+            "region", "Region:", 
+            choices=colnames(datasets::WorldPhones)
+          ),
+          shiny::helpText("Data from AT&T (1961) The World's Telephones.")
+        )
+      ),
+      shiny::column(
+        width = 7,
+        shiny::plotOutput("phonePlot")
       )
-    ),
-    shiny::column(
-      width = 7,
-      shiny::plotOutput("phonePlot")
     )
   )
 )
