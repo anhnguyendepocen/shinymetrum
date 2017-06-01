@@ -1,4 +1,4 @@
-shiny::fluidPage(
+ui <- shiny::fluidPage(
   # metrumStyle(),
   shiny::tags$h2("Telephones by region"),
   shiny::fluidRow(

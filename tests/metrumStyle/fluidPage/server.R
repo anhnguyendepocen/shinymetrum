@@ -1,4 +1,4 @@
-function(input, output) {
+server <- function(input, output) {
   output$phonePlot <- shiny::renderPlot({
     barplot(
       datasets::WorldPhones[,input$region]*1000, 
