@@ -1,15 +1,12 @@
 shiny::shinyUI(
   shiny::fluidPage(
     tags$script(
-      
-      '
-$(document).ready(function(){
-             Shiny.addCustomMessageHandler("arbJS",
-                function(arbJSCode) {
-                   eval(arbJSCode);
+      "
+      Shiny.addCustomMessageHandler('js',
+                function(code) {
+                   eval(code);
                 });
-                  })
-                '
+      "
     ),
     shiny::tags$h2("Telephones by region"),
     shiny::fluidRow(

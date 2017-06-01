@@ -30,7 +30,7 @@ metworxApp <- function(..., metworxTitle = "Metworx Shiny App"){
             href = "http://metrumrg.com/",
             target = "_blank",
             shiny::tags$img(
-              src = "https://github.com/metrumresearchgroup/shinymetrum/blob/master/inst/img/metworxLogo.png?raw=true",
+              src = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/metworxLogo.png",
               alt = "Metworx",
               width = "220",
               height = "69"

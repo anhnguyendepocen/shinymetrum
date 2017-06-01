@@ -14,7 +14,7 @@ shiny::shinyServer(
     observeEvent(input$alertWindowT, {
       req(input$alertWindowT)
       # runArbJS(session, paste0("alert('", input$alertWindowT, "');"))
-      session$sendCustomMessage("", paste0("alert('", input$alertWindowT, "');"));
+      session$sendCustomMessage("js", paste0("alert('", input$alertWindowT, "');"));
     })
     
     output$phonePlot <- shiny::renderPlot({
