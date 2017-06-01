@@ -1,9 +1,9 @@
 library(datasets)
-library(shiny)
-library(shinymetrum)
+# library(shiny)
+# library(shinymetrum)
 
 ui <- fluidPage(
-    metrumStyle(),
+    # metrumStyle(),
     tags$h2("Telephones by region"),
     fluidRow(
       column(
