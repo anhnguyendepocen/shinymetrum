@@ -12,7 +12,7 @@ if(type == "d"){
                   dashboardBody(
                     # Boxes need to be put in a row (or column)
                     fluidRow(
-                      box(plotOutput("plot1", height = 250)),
+                      box(plotOutput("plot1", height = 250),   dataTableOutput('tableTest')),
                       
                       box(
                         title = "Controls",
