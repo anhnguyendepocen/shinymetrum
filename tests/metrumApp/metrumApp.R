@@ -1,34 +1,31 @@
 library(datasets)
 library(shiny)
+library(shinydashboard)
 library(shinymetrum)
 
 ui <- 
   metrumApp(
-    title = "testing",
-      tabPanel(
-        title = "Main",
-        tags$h2("Telephones by region"),
-        fluidRow(
-          column(
-            width = 4,
-            wellPanel(
-              actionButton('runJS','runJS'),
-              selectInput(
-                inputId = "region",
-                label = "Region:", 
-                choices = colnames(WorldPhones)
-              ),
-              helpText("Data from AT&T (1961) The World's Telephones.")
-            )
+    tags$h2("Telephones by region"),
+    fluidRow(
+      column(
+        width = 4,
+        wellPanel(
+          actionButton('runJS','runJS'),
+          selectInput(
+            inputId = "region",
+            label = "Region:",
+            choices = colnames(WorldPhones)
           ),
-          column(
-            width = 7,
-            plotOutput("phonePlot"),
-            dataTableOutput('tableTest')
-          )
+          helpText("Data from AT&T (1961) The World's Telephones.")
         )
+      ),
+      column(
+        width = 7,
+        plotOutput("phonePlot"),
+        dataTableOutput('tableTest')
       )
     )
+  )
 
 server <- function(input, output, session) {
   output$phonePlot <- renderPlot({

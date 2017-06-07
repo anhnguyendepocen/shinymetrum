@@ -1,3 +1,14 @@
-body { padding-top: 50px; }
+:root {
+    --forest-green: #08642e;
+    --ocean-blue: #16b1bf;
+    --background-grey: #f1f1f1;
+}
 
-.navbar{ box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);}
+body {
+    padding-top: 50px;
+}
+
+.navbar-fixed-top {
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);*/
+    background-color: rgba(0, 0, 0, .14);
+}
