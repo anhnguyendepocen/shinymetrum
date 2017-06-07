@@ -5,6 +5,13 @@ $(document).ready(function () {
         });
 
 
+});
+
+$(window).load(function () {
+    $("#metrum-app-load-image").remove();
+    $("#metrum-app-content").attr("style", "visibility:visible");
+
+
     function fadeInlogo() {
         $("#metrum-logo").fadeOut("slow", function () {
             $(this).load(function () {
@@ -15,5 +22,4 @@ $(document).ready(function () {
     }
 
     setTimeout(fadeInlogo, 1500);
-
 });

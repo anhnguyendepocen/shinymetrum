@@ -40,8 +40,8 @@ if(type == "d"){
         ),
         column(
           width = 7,
-          plotOutput("phonePlot")# ,
-          # dataTableOutput('tableTest')
+          plotOutput("phonePlot"),
+          dataTableOutput('tableTest')
         )
       )
     )

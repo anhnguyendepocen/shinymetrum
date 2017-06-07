@@ -35,23 +35,33 @@ metrumApp <- function(...){
       includeMetrum("metrum-app", "css"),
       includeMetrum("metrum-app", "js")
     ),
-    shiny::tags$nav(
-      class = "navbar navbar-fixed-top",
-      shiny::tags$div(
-        class = "container-fluid",
-        shiny::tags$a(
-          class = "navbar-brand",
-          href = "http://metrumrg.com/",
-          target = "_blank",
-          shiny::tags$img(
-            id = "metrum-logo",
-            alt = "Metrum Research Group",
-            src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
-            #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
+    shiny::tags$img(
+      id = "metrum-app-load-image",
+      class="center-block",
+      alt = "Metrum Research Group",
+      src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
+    ),
+    shiny::tags$div(
+      id = "metrum-app-content",
+      style = "visibility:hidden !important;",
+      shiny::tags$nav(
+        class = "navbar navbar-fixed-top",
+        shiny::tags$div(
+          class = "container-fluid",
+          shiny::tags$a(
+            class = "navbar-brand",
+            href = "http://metrumrg.com/",
+            target = "_blank",
+            shiny::tags$img(
+              id = "metrum-logo",
+              alt = "Metrum Research Group",
+              src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
+              #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
+            )
           )
         )
-      )
-    ),
-    ...
+      ),
+      ...
+    )
   )
 }

@@ -18,3 +18,9 @@ body {
     height: 130%;
     width: auto;
 }
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
