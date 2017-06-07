@@ -14,5 +14,5 @@ $(document).ready(function () {
         });
     }
 
-    setTimeout(fadeInlogo, 1800);
+    setTimeout(fadeInlogo, 1500);
 });
