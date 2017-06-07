@@ -33,19 +33,21 @@ metrumApp <- function(...){
         href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
       ),
       includeMetrum("metrum-app", "css"),
-      includeMetrum("metrum-js", "js")
+      includeMetrum("metrum-app", "js")
     ),
     shiny::tags$nav(
       class = "navbar navbar-fixed-top",
       shiny::tags$div(
         class = "container-fluid",
         shiny::tags$a(
-          class = "navbar-brand navbar-right",
+          class = "navbar-brand",
           href = "http://metrumrg.com/",
           target = "_blank",
           shiny::tags$img(
+            id = "metrum-logo",
             alt = "Metrum Research Group",
-            src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
+            src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
+            #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
           )
         )
       )

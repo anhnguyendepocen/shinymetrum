@@ -3,24 +3,26 @@ library(shiny)
 library(shinydashboard)
 library(shinymetrum)
 
-ui <- 
-  metrumApp(
-    # dashboardPage(skin='black',
-    #   dashboardHeader(title = "Basic dashboard"),
-    #   dashboardSidebar(),
-    #   dashboardBody(
-    #     # Boxes need to be put in a row (or column)
-    #     fluidRow(
-    #       box(plotOutput("plot1", height = 250)),
-    # 
-    #       box(
-    #         title = "Controls",
-    #         sliderInput("slider", "Number of observations:", 1, 100, 50)
-    #       )
-    #     )
-    #   )
-    # )
-
+type <- "d"
+if(type == "d"){
+  appCode <- 
+    dashboardPage(skin='black',
+                  dashboardHeader(title = "Basic dashboard"),
+                  dashboardSidebar(),
+                  dashboardBody(
+                    # Boxes need to be put in a row (or column)
+                    fluidRow(
+                      box(plotOutput("plot1", height = 250)),
+                      
+                      box(
+                        title = "Controls",
+                        sliderInput("slider", "Number of observations:", 1, 100, 50)
+                      )
+                    )
+                  )
+    )
+} else {
+  appCode <- 
     fluidPage(
       tags$h2("Telephones by region"),
       fluidRow(
@@ -43,7 +45,10 @@ ui <-
         )
       )
     )
-  )
+}
+
+ui <- 
+  metrumApp(appCode)
 server <- function(input, output, session) {
   output$phonePlot <- renderPlot({
     barplot(
