@@ -3,7 +3,7 @@ Shiny.addCustomMessageHandler("metrumAppJS",
         eval(code);
     });
 
-$(window).load(function () {
+$(document).ready(function () {
 
     function fadeInlogo() {
         $("#metrum-logo").fadeOut("slow", function () {
@@ -14,5 +14,5 @@ $(window).load(function () {
         });
     }
 
-    setTimeout(fadeInlogo, 1500);
+    setTimeout(fadeInlogo, 1800);
 });
