@@ -10,5 +10,11 @@ body {
 
 .navbar-fixed-top {
     /*box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);*/
-    background-color: rgba(250, 250, 250, .95);
+    background-color: rgba(224, 228, 204, .75);
+    z-index: 10001;
+}
+
+.navbar-brand>img {
+  height: 130%;
+  width: auto;
 }

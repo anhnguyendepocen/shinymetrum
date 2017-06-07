@@ -1,4 +1,4 @@
 exportPattern("metrumStyle")
 exportPattern("metrumApp")
 exportPattern("metworxApp")
-exportPattern("metrumJS")
+exportPattern("metrumAppJS")
