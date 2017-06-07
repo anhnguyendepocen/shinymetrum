@@ -36,23 +36,18 @@ metrumApp <- function(...){
       includeMetrum("metrum-app", "css"),
       includeMetrum("metrum-js", "js")
     ),
-    shiny::tags$header(
-      shiny::tags$nav(
-        class = "navbar navbar-fixed-top",
-        shiny::tags$div(
-          class = "container-fluid",
-          shiny::tags$div(
-            class = "navbar-header",
-            shiny::tags$a(
-              class = "navbar-brand",
-              href = "http://metrumrg.com/",
-              target = "_blank",
-              shiny::tags$img(
-                alt = "Metrum Research Group",
-                src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logoDark.png",
-                height = "150%"
-              )
-            )
+    shiny::tags$nav(
+      class = "navbar navbar-fixed-top",
+      shiny::tags$div(
+        class = "container-fluid",
+        shiny::tags$a(
+          class = "navbar-brand navbar-right",
+          href = "http://metrumrg.com/",
+          target = "_blank",
+          shiny::tags$img(
+            alt = "Metrum Research Group",
+            src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png",
+            height = "150%"
           )
         )
       )
