@@ -14,7 +14,12 @@ body {
     z-index: 10001;
 }
 
+.navbar-brand {
+    padding-top: 14px;
+    padding-bottom: 13px;
+}
+
 .navbar-brand>img {
-    height: 120%;
+    height: 100%;
     width: auto;
 }
