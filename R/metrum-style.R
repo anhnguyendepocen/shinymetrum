@@ -6,7 +6,7 @@ metrumStyle <- function(){
     ),
     shiny::includeCSS(
       system.file(
-        "shiny-metrum.css",
+        "metrum-style.css",
         package = "shinymetrum"
       )
     ),

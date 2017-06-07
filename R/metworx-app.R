@@ -16,10 +16,11 @@ metworxApp <- function(..., metworxTitle = "Metworx Shiny App"){
       ),
       shiny::includeCSS(
         system.file(
-          "shiny-metworx.css",
+          "metworx-app.css",
           package = "shinymetrum"
         )
-      )
+      ),
+      includeMetrum("metrum-js", "js")
     ),
     shiny::div(
       class = "container-fluid",

@@ -1,22 +1,62 @@
-metrumApp <- function(...){
-  
+# metrumApp <- function(...){
+#   
+#   shiny::tagList(
+#     shiny::tags$head(
+#       metrumStyle(),
+#       includeMetrum('metrum-js', 'js')
+#     ),
+#     shiny::tags$nav(
+#       class = "navbar navbar-default navbar-static-top",
+#       shiny::tags$div(
+#         class = "container-fluid",
+#         shiny::tags$div(
+#           class = "navbar-header",
+#           shiny::tags$span(
+#             class = "navbar-brand"
+#           )
+#         )
+#       )
+#     ),
+#     ...
+#   )
+#   
+# }
+metrumApp <- function(..., title){
   shiny::tagList(
     shiny::tags$head(
-      metrumStyle()
+      shiny::tags$meta(
+        content="width=device-width, initial-scale=1.0",
+        name="viewport"
+      ),
+      shiny::tags$link(
+        rel = "shortcut icon",
+        href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
+      ),
+      bootstrapLib(),
+      includeMetrum("metrum-app", "css"),
+      includeMetrum("metrum-js", "js")
     ),
     shiny::tags$nav(
-      class = "navbar navbar-default navbar-static-top",
+      class = "navbar navbar-inverse navbar-fixed-top",
       shiny::tags$div(
         class = "container-fluid",
         shiny::tags$div(
           class = "navbar-header",
-          shiny::tags$span(
-            class = "navbar-brand"
+          shiny::tags$a(
+            class = "navbar-brand",
+            href = "http://metrumrg.com/",
+            target = "_blank",
+            shiny::tags$img(
+              alt = "Metrum Research Group",
+              src = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/logo.png"
+            )
           )
         )
       )
     ),
-    ...
+    shiny::tags$div(
+      class = "container-fluid",
+      ...
+    )
   )
-  
 }
