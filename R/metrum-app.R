@@ -32,7 +32,7 @@ metrumApp <- function(...){
         rel = "shortcut icon",
         href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
       ),
-      bootstrapLib(),
+      # bootstrapLib(),
       includeMetrum("metrum-app", "css"),
       includeMetrum("metrum-js", "js")
     ),
@@ -46,12 +46,14 @@ metrumApp <- function(...){
           target = "_blank",
           shiny::tags$img(
             alt = "Metrum Research Group",
-            src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png",
+            src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png",
             height = "150%"
           )
         )
       )
     ),
-    ...
+    shiny::fluidPage(
+      ...
+    )
   )
 }
