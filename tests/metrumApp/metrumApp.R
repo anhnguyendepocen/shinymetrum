@@ -3,7 +3,7 @@ library(shiny)
 library(shinydashboard)
 library(shinymetrum)
 
-type <- "d"
+type <- "dd"
 if(type == "d"){
   appCode <- 
     dashboardPage(skin='black',

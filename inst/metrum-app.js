@@ -1,16 +1,9 @@
-$(document).ready(function () {
-    Shiny.addCustomMessageHandler("metrumAppJS",
-        function (code) {
-            eval(code);
-        });
-
-
-});
+Shiny.addCustomMessageHandler("metrumAppJS",
+    function (code) {
+        eval(code);
+    });
 
 $(window).load(function () {
-    $("#metrum-app-load-image").remove();
-    $("#metrum-app-content").attr("style", "visibility:visible");
-
 
     function fadeInlogo() {
         $("#metrum-logo").fadeOut("slow", function () {
