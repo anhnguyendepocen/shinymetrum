@@ -40,8 +40,12 @@ metrumApp <- function(..., title = ""){
         class = "navbar navbar-fixed-top",
         shiny::tags$div(
           class = "container-fluid",
+          shiny::tags$div(
+            class = "text-left metrum-green-title",
+            title
+          ),
           shiny::tags$a(
-            class = "navbar-brand",
+            class = "navbar-brand navbar-right",
             href = "http://metrumrg.com/",
             target = "_blank",
             shiny::tags$img(
@@ -50,10 +54,6 @@ metrumApp <- function(..., title = ""){
               src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
               #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
             )
-          ),
-          shiny::tags$div(
-            class = "text-right metrum-green-title",
-            title
           )
         )
       ),
