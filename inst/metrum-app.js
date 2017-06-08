@@ -15,4 +15,16 @@ $(document).ready(function () {
     }
 
     setTimeout(fadeInlogo, 1500);
+
+    //shinydashboard adjustment
+    function resizeForMetrumLogo() {
+        var curHeight = $(".content-wrapper").height();
+        $(".content-wrapper").css("min-height", curHeight - 50);
+    }
+
+    resizeForMetrumLogo();
+
+    $(window, ".wrapper").resize(function () {
+        resizeForMetrumLogo();
+    });
 });

@@ -8,8 +8,8 @@ body {
 /* bootstrap adjustments */
 
 .navbar-fixed-top {
-    background-color: /*#E8EBD9*/
-    rgba(224, 228, 204, .87);
+    background-color: rgba(224, 228, 204, .87);
+    /* shinydashboard */
     z-index: 10001;
 }
 
@@ -22,11 +22,3 @@ body {
     height: 100%;
     width: auto;
 }
-
-
-/* shinydashbooard adjustments 
-
-.content-wrapper {
-    min-height: 100% !important;
-}
-*/
