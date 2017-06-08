@@ -24,8 +24,9 @@ body {
 }
 
 
-/* shinydashbooard adjustments */
+/* shinydashbooard adjustments 
 
 .content-wrapper {
-    min-height: 944px !important;
+    min-height: 100% !important;
 }
+*/
