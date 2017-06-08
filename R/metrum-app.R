@@ -21,7 +21,7 @@
 #   )
 #   
 # }
-metrumApp <- function(...){
+metrumApp <- function(..., title = ""){
   shiny::tagList(
     shiny::tags$head(
       shiny::tags$meta(
@@ -50,7 +50,8 @@ metrumApp <- function(...){
               src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
               #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
             )
-          )
+          ),
+          title
         )
       ),
       ...
