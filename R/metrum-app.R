@@ -50,6 +50,10 @@ metrumApp <- function(..., title = ""){
               src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
               #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
             )
+          ),
+          shiny::tags$div(
+            class = "text-right metrum-green-title",
+            title
           )
         )
       ),
