@@ -40,12 +40,12 @@ metrumApp <- function(..., title = ""){
         class = "navbar navbar-fixed-top",
         shiny::tags$div(
           class = "container-fluid",
-          shiny::tags$div(
-            class = "text-left metrum-green-title",
-            title
-          ),
+          # shiny::tags$div(
+          #   class = "text-left metrum-green-title",
+          #   title
+          # ),
           shiny::tags$a(
-            class = "navbar-brand navbar-right",
+            class = "navbar-brand",
             href = "http://metrumrg.com/",
             target = "_blank",
             shiny::tags$img(

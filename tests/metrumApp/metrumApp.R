@@ -48,7 +48,7 @@ if(type == "d"){
 }
 
 ui <- 
-  metrumApp(appCode)
+  metrumApp(title = "Example App", appCode)
 server <- function(input, output, session) {
   output$phonePlot <- renderPlot({
     barplot(
