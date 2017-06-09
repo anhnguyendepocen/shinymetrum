@@ -10,12 +10,12 @@ metrumApp <- function(...){
                            "metrum_new_logo.png",
                            "logo_m.png")
   
-  for(file.i in c(filesToServeWithApp))
-    
+  for(file.i in c(filesToServeWithApp)){
     file.copy(
       from = system.file(file.i, package = "shinymetrum"),
       to = "www"
     )
+  }
   
   shiny::tagList(
     shiny::tags$head(
