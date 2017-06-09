@@ -1,14 +1,14 @@
 metrumApp <- function(...){
   
-  if(!dir.exists('www')){
-    dir.create('www')
-  }
-  
   filesToServeWithApp <- c("metrum-app.css",
                            "metrum-app.js",
                            "favicon.ico",
                            "metrum_new_logo.png",
                            "logo_m.png")
+  
+  if(!dir.exists('www')){
+    dir.create('www')
+  }
   
   for(file.i in c(filesToServeWithApp)){
     file.copy(
