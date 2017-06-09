@@ -1,19 +1,38 @@
 metrumApp <- function(...){
   
-  filesToServeWithApp <- c("metrum-app.css",
-                           "metrum-app.js",
-                           "favicon.ico",
-                           "metrum_new_logo.png",
-                           "logo_m.png")
+  filesToServe <- 
+    data.frame(
+      type = c("css",
+               "js",
+               "img",
+               "img",
+               "img"),
+      name = c("metrum-app.css",
+               "metrum-app.js",
+               "favicon.ico",
+               "metrum_new_logo.png",
+               "logo_m.png")
+    )
+  
+  
   
   if(!dir.exists('www')){
     dir.create('www')
   }
   
-  for(file.i in filesToServeWithApp){
+  for(i in 1:nrow(filesToServe)){
+    
+    if(!dir.exists(file.path('www', filesToServe$type[i]))){
+      dir.create(file.path('www', filesToServe$type[i]))
+    }
+    
     file.copy(
-      from = system.file(file.i, package = "shinymetrum"),
-      to = "www"
+      from = system.file(
+        file.path(filesToServe$type[i], 
+                  filesToServe$name[i]),
+        package = "shinymetrum"
+      ),
+      to = file.path("www", filesToServe$type[i])
     )
   }
   
@@ -25,10 +44,10 @@ metrumApp <- function(...){
       ),
       shiny::tags$link(
         rel = "shortcut icon",
-        href = "favicon.ico"
+        href = "img/favicon.ico"
       ),
-      tags$link(rel="stylesheet", href = "metrum-app.css"),
-      tags$script(src = "metrum-app.js")
+      tags$link(rel="stylesheet", href = "css/metrum-app.css"),
+      tags$script(src = "js/metrum-app.js")
     ),
     shiny::tags$div(
       shiny::tags$nav(

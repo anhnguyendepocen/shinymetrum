@@ -6,7 +6,7 @@ $(document).ready(function () {
             $(this).load(function () {
                 $(this).fadeIn("slow");
             });
-            $(this).attr("src", "logo_m.png");
+            $(this).attr("src", "img/logo_m.png");
         });
     }
 
