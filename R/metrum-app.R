@@ -61,7 +61,7 @@ metrumApp <- function(...){
             shiny::tags$img(
               id = "metrum-logo",
               alt = "Metrum Research Group",
-              src = "metrum_new_logo.png"
+              src = "img/metrum_new_logo.png"
             )
           )
         )
