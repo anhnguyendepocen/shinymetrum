@@ -3,23 +3,24 @@ library(shiny)
 library(shinydashboard)
 library(shinymetrum)
 
-type <- "d"
+type <- "dl"
 if(type == "d"){
   appCode <- 
-    dashboardPage(skin='black',
-                  dashboardHeader(title = "Basic dashboard"),
-                  dashboardSidebar(),
-                  dashboardBody(
-                    # Boxes need to be put in a row (or column)
-                    fluidRow(
-                      box(plotOutput("plot1", height = 250),   dataTableOutput('tableTest')),
-                      
-                      box(
-                        title = "Controls",
-                        sliderInput("slider", "Number of observations:", 1, 100, 50)
-                      )
-                    )
-                  )
+    dashboardPage(
+      skin='black',
+      dashboardHeader(title = "Basic dashboard"),
+      dashboardSidebar(),
+      dashboardBody(
+        # Boxes need to be put in a row (or column)
+        fluidRow(
+          box(plotOutput("plot1", height = 250),   dataTableOutput('tableTest')),
+          
+          box(
+            title = "Controls",
+            sliderInput("slider", "Number of observations:", 1, 100, 50)
+          )
+        )
+      )
     )
 } else {
   appCode <- 
@@ -29,7 +30,7 @@ if(type == "d"){
         column(
           width = 4,
           wellPanel(
-            actionButton('runJS','runJS'),
+            # actionButton('runJS','runJS'),
             selectInput(
               inputId = "region",
               label = "Region:",

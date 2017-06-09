@@ -4,7 +4,7 @@ library(shinymetrum)
 
 ui <- 
   metrumApp(
-    title = "testing",
+    fluidPage(
       tabPanel(
         title = "Main",
         tags$h2("Telephones by region"),
@@ -29,6 +29,7 @@ ui <-
         )
       )
     )
+  )
 
 server <- function(input, output, session) {
   output$phonePlot <- renderPlot({

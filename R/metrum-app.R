@@ -1,27 +1,22 @@
-# metrumApp <- function(...){
-#   
-#   shiny::tagList(
-#     shiny::tags$head(
-#       metrumStyle(),
-#       includeMetrum('metrum-js', 'js')
-#     ),
-#     shiny::tags$nav(
-#       class = "navbar navbar-default navbar-static-top",
-#       shiny::tags$div(
-#         class = "container-fluid",
-#         shiny::tags$div(
-#           class = "navbar-header",
-#           shiny::tags$span(
-#             class = "navbar-brand"
-#           )
-#         )
-#       )
-#     ),
-#     ...
-#   )
-#   
-# }
-metrumApp <- function(..., title = ""){
+metrumApp <- function(...){
+  
+  if(!dir.exists('www')){
+    dir.create('www')
+  }
+  
+  filesToServeWithApp <- c("metrum-app.css",
+                           "metrum-app.js",
+                           "favicon.ico",
+                           "metrum_new_logo.png",
+                           "logo_m.png")
+  
+  for(file.i in c(filesToServeWithApp))
+    
+    file.copy(
+      from = system.file(file.i, package = "shinymetrum"),
+      to = "www"
+    )
+  
   shiny::tagList(
     shiny::tags$head(
       shiny::tags$meta(
@@ -30,20 +25,16 @@ metrumApp <- function(..., title = ""){
       ),
       shiny::tags$link(
         rel = "shortcut icon",
-        href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
+        href = "favicon.ico"
       ),
-      includeMetrum("metrum-app", "css"),
-      includeMetrum("metrum-app", "js")
+      tags$link(rel="stylesheet", href = "metrum-app.css"),
+      tags$script(src = "metrum-app.js")
     ),
     shiny::tags$div(
       shiny::tags$nav(
         class = "navbar navbar-fixed-top",
         shiny::tags$div(
           class = "container-fluid",
-          # shiny::tags$div(
-          #   class = "text-left metrum-green-title",
-          #   title
-          # ),
           shiny::tags$a(
             class = "navbar-brand",
             href = "http://metrumrg.com/",
@@ -51,8 +42,7 @@ metrumApp <- function(..., title = ""){
             shiny::tags$img(
               id = "metrum-logo",
               alt = "Metrum Research Group",
-              src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
-              #src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/logo_m.png"
+              src = "metrum_new_logo.png"
             )
           )
         )
