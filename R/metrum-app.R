@@ -10,7 +10,7 @@ metrumApp <- function(...){
     dir.create('www')
   }
   
-  for(file.i in c(filesToServeWithApp)){
+  for(file.i in filesToServeWithApp){
     file.copy(
       from = system.file(file.i, package = "shinymetrum"),
       to = "www"
