@@ -46,27 +46,44 @@ metrumApp <- function(...){
         rel = "shortcut icon",
         href = "img/favicon.ico"
       ),
-      tags$link(rel="stylesheet", href = "css/metrum-app.css"),
-      tags$script(src = "js/metrum-app.js")
+      tags$link(rel="stylesheet", href = "css/metrum-app.css")# ,
+      # tags$script(src = "js/metrum-app.js")
     ),
-    shiny::tags$div(
-      shiny::tags$nav(
-        class = "navbar navbar-fixed-top",
-        shiny::tags$div(
-          class = "container-fluid",
-          shiny::tags$a(
-            class = "navbar-brand",
-            href = "http://metrumrg.com/",
-            target = "_blank",
-            shiny::tags$img(
-              id = "metrum-logo",
-              alt = "Metrum Research Group",
-              src = "img/metrum_new_logo.png"
-            )
+    shiny::tags$nav(
+      class = "navbar navbar-fixed-top",
+      shiny::tags$div(
+        class = "container-fluid",
+        shiny::tags$a(
+          class = "navbar-brand",
+          href = "http://metrumrg.com/",
+          target = "_blank",
+          shiny::tags$img(
+            id = "metrum-logo",
+            alt = "Metrum Research Group",
+            src = "img/metrum_new_logo.png"
           )
         )
-      ),
-      ...
+      )
+    ),
+    ...,
+    shiny::tags$nav(
+      class="navbar navbar-default",
+      style = 'margin-bottom:0;',
+      shiny::tags$div(
+        class = "container-fluid",
+        shiny::tags$a(
+          class = "navbar-brand",
+          href = "http://metrumrg.com/",
+          style ='transform: translateX(-50%); left: 50%; position: absolute;padding-top:0;',
+          target = "_blank",
+          "Powered by ",
+          shiny::tags$img(
+            style = "height: 75%; padding-bottom: 5px;",
+            alt = "Metrum Research Group",
+            src = "img/metrum_new_logo.png"
+          )
+        )
+      )
     )
   )
 }

@@ -2,6 +2,7 @@
 
 body {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -12,12 +13,12 @@ body {
     /* shinydashboard */
     z-index: 10001;
 }
-
+/*
 .navbar-brand {
     padding-top: 13px;
     padding-bottom: 12px;
 }
-
+*/
 .navbar-brand>img {
     height: 100%;
     width: auto;
