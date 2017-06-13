@@ -1,4 +1,4 @@
-metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
+metrumApp <- function(..., logo_location = "img/metrum_new_logo.png", include_footer = TRUE){
   
   filesToServe <- 
     data.frame(
@@ -41,6 +41,31 @@ metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
     )
   }
   
+  if(include_footer){
+    
+    metrumAppFooter <- 
+      shiny::tags$nav(
+        class="navbar navbar-default navbar-fixed-bottom",
+        id = "bottom-nav",
+        style = 'display:none',
+        shiny::tags$div(
+          class = "container-fluid",
+          shiny::tags$a(
+            class = "navbar-brand",
+            href = "http://metrumrg.com/",
+            style ='transform: translateX(-50%); left: 50%; position: absolute;',
+            target = "_blank",
+            shiny::tags$img(
+              alt = "Metrum Research Group",
+              src = "img/metrum_new_logo.png"
+            )
+          )
+        )
+      )
+  } else {
+    metrumAppFooter <- shiny::tags$div()
+  }
+  
   shiny::tagList(
     shiny::tags$head(
       shiny::tags$meta(
@@ -81,24 +106,7 @@ metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
         )
       ),
       ...,
-      shiny::tags$nav(
-        class="navbar navbar-default navbar-fixed-bottom",
-        id = "bottom-nav",
-        style = 'display:none',
-        shiny::tags$div(
-          class = "container-fluid",
-          shiny::tags$a(
-            class = "navbar-brand",
-            href = "http://metrumrg.com/",
-            style ='transform: translateX(-50%); left: 50%; position: absolute;',
-            target = "_blank",
-            shiny::tags$img(
-              alt = "Metrum Research Group",
-              src = "img/metrum_new_logo.png"
-            )
-          )
-        )
-      )
+      metrumAppFooter
     )
   )
 }
