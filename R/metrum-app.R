@@ -66,7 +66,7 @@ metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
       margin-left: -210px;
       margin-top: -100px;",
       alt = "Metrum Research Group",
-      src = "img/metrum_new_logo.png"
+      src = "img/metrum_new_logo.png"#
     ),
     shiny::tags$div(
       id = "metrum-app-content",
