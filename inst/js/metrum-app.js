@@ -29,6 +29,10 @@ $(document).ready(function () {
         displayFooter();
     });
     
+       $(window, ".wrapper").resize(function () {
+         displayFooter();
+    });
+    
         $("body").bind("DOMSubtreeModified", function () {
                  displayFooter();
         });
