@@ -28,6 +28,10 @@ $(document).ready(function () {
     $(window).scroll(function () {
         displayFooter();
     });
+    
+        $("body").bind("DOMSubtreeModified", function () {
+                 displayFooter();
+        });
 
     function loadMetrumContent() {
         $("#metrum-app-loading-image").fadeOut('slow', function () {

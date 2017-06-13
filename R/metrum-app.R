@@ -14,8 +14,6 @@ metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
                "logo_m.png")
     )
   
-  
-  
   if(!dir.exists('www')){
     dir.create('www')
   }
