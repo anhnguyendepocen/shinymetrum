@@ -28,14 +28,14 @@ $(document).ready(function () {
     $(window).scroll(function () {
         displayFooter();
     });
-    
-       $(window, ".wrapper").resize(function () {
-         displayFooter();
+
+    $(window, ".wrapper").resize(function () {
+        displayFooter();
     });
-    
-        $("body").bind("DOMSubtreeModified", function () {
-                 displayFooter();
-        });
+
+    $("body").bind("DOMSubtreeModified", function () {
+        displayFooter();
+    });
 
     function loadMetrumContent() {
         $("#metrum-app-loading-image").fadeOut('slow', function () {
