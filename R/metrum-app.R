@@ -26,20 +26,19 @@ metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
       dir.create(file.path('www', filesToServe$type[i]))
     }
     
-    file.remove(
-      file.path(
-        "www",
-        filesToServe$type[i], 
-        filesToServe$name[i]
-      ) 
-    )
+    fileTypeName.i <- file.path(filesToServe$type[i], 
+                                filesToServe$name[i])
+    
+    
+    # Check if file exists and remove
+    if(file.exists(file.path("www", fileTypeName.i))){
+      file.remove(
+        file.path("www", fileTypeName.i) 
+      )
+    }
     
     file.copy(
-      from = system.file(
-        file.path(filesToServe$type[i], 
-                  filesToServe$name[i]),
-        package = "shinymetrum"
-      ),
+      from = system.file(fileTypeName.i, package = "shinymetrum"),
       to = file.path("www", filesToServe$type[i])
     )
   }
@@ -75,33 +74,27 @@ metrumApp <- function(..., logo_location = "img/metrum_new_logo.png"){
         class = "navbar navbar-default navbar-fixed-top",
         shiny::tags$div(
           class = "container-fluid",
-          shiny::tags$a(
+          shiny::tags$img(
             class = "navbar-brand",
-            href = "http://metrumrg.com/",
-            target = "_blank",
-            shiny::tags$img(
-              style = "opacity:1;",
-              id = "metrum-logo",
-              alt = "Metrum Research Group",
-              src = logo_location
-            )
+            id = "metrum-logo",
+            alt = "Metrum Research Group",
+            src = logo_location
           )
         )
       ),
       ...,
       shiny::tags$nav(
-        class="navbar navbar-default",
-        style = 'margin-bottom:0;',
+        class="navbar navbar-default navbar-fixed-bottom",
+        id = "bottom-nav",
+        style = 'display:none',
         shiny::tags$div(
           class = "container-fluid",
           shiny::tags$a(
             class = "navbar-brand",
             href = "http://metrumrg.com/",
-            style ='transform: translateX(-50%); left: 50%; position: absolute;padding-top:0;',
+            style ='transform: translateX(-50%); left: 50%; position: absolute;',
             target = "_blank",
-            "Powered by ",
             shiny::tags$img(
-              style = "height: 75%; padding-bottom: 5px;",
               alt = "Metrum Research Group",
               src = "img/metrum_new_logo.png"
             )
