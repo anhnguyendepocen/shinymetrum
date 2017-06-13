@@ -19,7 +19,7 @@ $(document).ready(function () {
         var docHeight = $(document).height();
 
         if (docHeight == scrollLoc) {
-            $("#bottom-nav").show();
+            $("#bottom-nav").fadeIn('slow');
         } else {
             $("#bottom-nav").fadeOut('slow');
         }
@@ -30,10 +30,14 @@ $(document).ready(function () {
     });
 
     function loadMetrumContent() {
-        $("#metrum-app-loading-image").remove();
-        $("#metrum-app-content").css("visibility", "initial");
+        $("#metrum-app-loading-image").fadeOut('slow', function () {
+            $("#metrum-app-content").css("visibility", "initial");
+            displayFooter();
+        });
 
-        displayFooter();
-    }
-    setTimeout(loadMetrumContent, 1500);
+    };
+
+
+
+    setTimeout(loadMetrumContent, 1000);
 });
