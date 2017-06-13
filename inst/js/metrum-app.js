@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    /* logo fade in */
+    /* logo fade in
     function fadeInlogo() {
         $("#metrum-logo").fadeOut("slow", function () {
             $(this).load(function () {
@@ -11,7 +11,10 @@ $(document).ready(function () {
     }
 
     setTimeout(fadeInlogo, 1500);
-
+    */
+    
+    
+    
     /* shinydashboard adjustment */
     function resizeForMetrumLogo() {
         var curHeight = $(".content-wrapper").height();
@@ -23,5 +26,10 @@ $(document).ready(function () {
     $(window, ".wrapper").resize(function () {
         resizeForMetrumLogo();
     });
-
+    
+    function loadMetrumContent(){
+    $("#metrum-app-loading-image").remove();
+    $("#metrum-app-content").css("visibility", "initial");
+    }
+    setTimeout(loadMetrumContent, 1500);
 });
