@@ -10,7 +10,7 @@ body {
 .navbar {
     background-color: rgba(220, 220, 220, 0.7);
     /* shinydashboard */
-    z-index: 10001;
+    z-index: 1049;
 }
 
 .navbar-brand>img {

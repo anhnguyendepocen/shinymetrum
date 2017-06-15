@@ -3,7 +3,7 @@ library(shiny)
 library(shinydashboard)
 library(shinymetrum)
 
-type <- "dl"
+type <- "d"
 if(type == "d"){
   appCode <- 
     dashboardPage(

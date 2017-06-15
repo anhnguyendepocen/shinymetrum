@@ -19,7 +19,7 @@ $(document).ready(function () {
         var docHeight = $(document).height();
 
         if (docHeight == scrollLoc) {
-            $("#bottom-nav").fadeIn('slow');
+            $("#bottom-nav").show();
         } else {
             $("#bottom-nav").fadeOut('slow');
         }

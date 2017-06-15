@@ -2,20 +2,15 @@
 
 body {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
-
 
 /* bootstrap adjustments */
 
-.navbar-fixed-top {
-    background-color: rgba(224, 228, 204, .87);
+.navbar {
+    background-color: rgba(220, 220, 220, 0.7);
     /* shinydashboard */
-    z-index: 10001;
-}
-
-.navbar-brand {
-    padding-top: 13px;
-    padding-bottom: 12px;
+    z-index: 1049;
 }
 
 .navbar-brand>img {

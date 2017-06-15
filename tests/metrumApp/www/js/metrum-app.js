@@ -1,21 +1,9 @@
 $(document).ready(function () {
 
-    /* logo fade in */
-    function fadeInlogo() {
-        $("#metrum-logo").fadeOut("slow", function () {
-            $(this).load(function () {
-                $(this).fadeIn("slow");
-            });
-            $(this).attr("src", "img/logo_m.png");
-        });
-    }
-
-    setTimeout(fadeInlogo, 1500);
-
     /* shinydashboard adjustment */
     function resizeForMetrumLogo() {
         var curHeight = $(".content-wrapper").height();
-        $(".content-wrapper").css("min-height", curHeight - 50);
+        $(".content-wrapper").css("min-height", curHeight - 100);
     }
 
     resizeForMetrumLogo();
@@ -24,4 +12,40 @@ $(document).ready(function () {
         resizeForMetrumLogo();
     });
 
+    function displayFooter() {
+        var topScroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        var scrollLoc = topScroll + windowHeight;
+        var docHeight = $(document).height();
+
+        if (docHeight == scrollLoc) {
+            $("#bottom-nav").show();
+        } else {
+            $("#bottom-nav").fadeOut('slow');
+        }
+    }
+
+    $(window).scroll(function () {
+        displayFooter();
+    });
+
+    $(window, ".wrapper").resize(function () {
+        displayFooter();
+    });
+
+    $("body").bind("DOMSubtreeModified", function () {
+        displayFooter();
+    });
+
+    function loadMetrumContent() {
+        $("#metrum-app-loading-image").fadeOut('slow', function () {
+            $("#metrum-app-content").css("visibility", "initial");
+            displayFooter();
+        });
+
+    };
+
+
+
+    setTimeout(loadMetrumContent, 1000);
 });
