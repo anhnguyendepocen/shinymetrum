@@ -36,7 +36,7 @@ metrumApp <- function(..., logo_location = "https://raw.githubusercontent.com/me
         href = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/favicon.ico"
       ),
       includeCSS("https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/css/metrum-app.css"),
-      includeScript("https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/js/metrum-app.js"),
+      includeScript("https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/js/metrum-app.js")
     ),
     shiny::tags$img(
       id = "metrum-app-loading-image",
