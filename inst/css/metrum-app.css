@@ -32,6 +32,12 @@ body {
     margin-bottom: 5px;
 }
 
+@media (min-width: 768px) {
+.navbar-fixed-top .navbar-brand {
+    margin-left: 0;
+}
+}
+
 .metrum-green-title {
     color: #08642e;
     font-size: 30px;
