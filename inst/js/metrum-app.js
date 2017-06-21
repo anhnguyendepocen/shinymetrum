@@ -41,6 +41,7 @@ $(document).ready(function () {
         $("#metrum-app-loading-image").fadeOut('slow', function () {
             $("#metrum-app-content").css("visibility", "initial");
             displayFooter();
+            $('.shiny-server-account').css("z-index", "1050");
         });
 
     }
