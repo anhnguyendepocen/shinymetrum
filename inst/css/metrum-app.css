@@ -1,7 +1,7 @@
 /* general */
 
 body {
-    padding-top: 70px;
+    padding-top: 50px;
     padding-bottom: 70px;
 }
 
@@ -17,23 +17,13 @@ body {
     background-color: rgba(220, 220, 220, 0.7);
     /* shinydashboard */
     z-index: 1049;
-    height: 70px;
 }
 
 
 .navbar-brand>img {
-    height: 30px;
-    width: 120px;
+    height: 100%;
+    width: auto;
 }
-
-.navbar-brand {
-    padding-top: 10px;
-    padding-bottom: 11px;
-    padding-left: 16px;
-    padding-right: 15px;
-    margin-top: 8px;
-}
-
 
 .metrum-green-title {
     color: #08642e;
