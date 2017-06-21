@@ -23,8 +23,12 @@ body {
 .navbar-brand>img {
     height: 100%;
     width: auto;
+}
+
+.navbar-brand {
     padding: 11px 15px;
 }
+
 
 .metrum-green-title {
     color: #08642e;
