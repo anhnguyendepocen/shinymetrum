@@ -34,11 +34,6 @@ body {
     margin-top: 8px;
 }
 
-.navbar-fixed-top .navbar-brand>img {
-    height: 120px;
-    width: 30px;
-}
-
 .metrum-green-title {
     color: #08642e;
     font-size: 30px;
