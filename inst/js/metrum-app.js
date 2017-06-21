@@ -3,7 +3,7 @@ $(document).ready(function () {
     /* shinydashboard adjustment */
     function resizeForMetrumLogo() {
         var curHeight = $(".content-wrapper").height();
-        $(".content-wrapper").css("min-height", curHeight - 100);
+        $(".content-wrapper").css("min-height", curHeight - 120);
     }
 
     resizeForMetrumLogo();
@@ -43,9 +43,7 @@ $(document).ready(function () {
             displayFooter();
         });
 
-    };
-
-
-
+    }
+    
     setTimeout(loadMetrumContent, 1000);
 });

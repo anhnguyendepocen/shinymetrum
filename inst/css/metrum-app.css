@@ -1,7 +1,7 @@
 /* general */
 
 body {
-    padding-top: 70px;
+    padding-top: 90px;
     padding-bottom: 70px;
 }
 
@@ -17,6 +17,7 @@ body {
     background-color: rgba(220, 220, 220, 0.7);
     /* shinydashboard */
     z-index: 1049;
+    height: 70px;
 }
 
 
