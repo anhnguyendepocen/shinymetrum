@@ -28,13 +28,13 @@ body {
 
 .navbar-fixed-top .navbar-brand {
     padding: 5px;
-    margin-top: 4px;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
 @media (min-width: 768px) {
 .navbar-fixed-top .navbar-brand {
-    margin-left: 0;
+    margin-left: 0 !important;
 }
 }
 
