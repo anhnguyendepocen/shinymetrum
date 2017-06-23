@@ -12,7 +12,7 @@ metworxApp <- function(..., metworxTitle = "Metworx Shiny App"){
       ),
       shiny::tags$link(
         rel = "shortcut icon",
-        href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
+        href = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/favicon.ico"
       ),
       shiny::includeCSS(
         system.file(
@@ -31,7 +31,7 @@ metworxApp <- function(..., metworxTitle = "Metworx Shiny App"){
             href = "http://metrumrg.com/",
             target = "_blank",
             shiny::tags$img(
-              src = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/metworxLogo.png",
+              src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metworxLogo.png",
               alt = "Metworx",
               width = "220",
               height = "69"
