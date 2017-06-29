@@ -46,5 +46,5 @@ $(document).ready(function () {
 
     }
     
-    setTimeout(loadMetrumContent, 1000);
+    setTimeout(loadMetrumContent, 1100);
 });
