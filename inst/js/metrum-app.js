@@ -38,7 +38,7 @@ $(document).ready(function () {
     });
 
     function loadMetrumContent() {
-        $("#metrum-app-loading-image").fadeOut('slow', function () {
+        $("#metrum-app-loading-image").hide(function () { //fadeOut('slow', function () {
             $("#metrum-app-content").css("visibility", "initial");
             displayFooter();
         });
