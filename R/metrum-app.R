@@ -40,8 +40,8 @@ metrumApp <- function(..., logo_location = "https://raw.githubusercontent.com/me
     ),
     shiny::tags$img(
       id = "metrum-app-loading-image",
-      alt = "Metrum Research Group",
-      src = "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/img/metrum_new_logo.png"
+      alt = "Loading",
+      src = logo_location
     ),
     shiny::tags$div(
       id = "metrum-app-content",
