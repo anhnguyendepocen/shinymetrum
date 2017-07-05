@@ -5,16 +5,10 @@ metrumStyle <- function(){
       href = "https://metrumrg-soft.s3.amazonaws.com/shinyapps/shinymetrum/favicon.ico"
     ),
     shiny::includeCSS(
-      system.file(
-        "metrum-style.css",
-        package = "shinymetrum"
-      )
+      "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/css/metrum-style.css"
     ),
     shiny::includeScript(
-      system.file(
-        "replace-logo.js",
-        package = "shinymetrum"
-      )
+      "https://raw.githubusercontent.com/metrumresearchgroup/shinymetrum/master/inst/js/replace-logo.js"
     )
   )
 }
